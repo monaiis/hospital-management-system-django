@@ -1,5 +1,6 @@
 # Hospital management system
         pip install django
+        pip install django-widget-tweaks
         pip install xhtml2pdf
        
 > command 
