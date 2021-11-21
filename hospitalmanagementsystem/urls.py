@@ -19,6 +19,7 @@ from hospital import views
 from django.contrib.auth.views import LoginView,LogoutView
 
 
+
 #-------------FOR ADMIN RELATED URLS
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -111,4 +112,3 @@ urlpatterns +=[
     path('patient-discharge', views.patient_discharge_view,name='patient-discharge'),
 
 ]
-
