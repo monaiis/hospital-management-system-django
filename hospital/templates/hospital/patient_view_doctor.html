@@ -1,80 +1,69 @@
-{% extends 'hospital/patient_base.html' %}
-{% block content %}
-{%load static%}
+{% extends 'hospital/patient_base.html' %} {% block content %} {%load static%}
 
 <head>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-  <style media="screen">
-    a:link {
-      text-decoration: none;
-    }
-
-    h6 {
-      text-align: center;
-    }
-
-    .row {
-      margin: 100px;
-    }
-  </style>
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+        
+        h6 {
+            text-align: center;
+        }
+        
+        .row {
+            margin: 100px;
+        }
+    </style>
 </head>
-<!--
-written By : sumit kumar
-facebook : fb.com/sumit.luv
--->
-
 
 <div class="container">
 
-    <form  action="/searchdoctor" method="get" style="margin-left:70%;" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" name="query" id="query" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form action="/searchdoctor" method="get" style="margin-left:74%;" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="query" id="query" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: rgba(137, 200, 242, 1);color:white;border-radius: 40px;margin-left: 10px;">Search</button>
     </form>
- 
 
-  {% if doctors %}
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h6 class="panel-title"> Total Doctor List</h6>
+
+    {% if doctors %}
+    <div class="panel panel-primary" style="margin-top: 0.50cm; border-color: rgba(137, 200, 242, 1);width: 106.5rem;margin-left: 0.55cm;">
+        <div class="panel-heading" style="background:rgba(181, 217, 236, 1); border-color:rgba(181, 217, 236, 1) ; text-align:center; 
+    width: 100rem; height: 3.5rem; margin-left: 0.8cm;">
+            <h6 class="panel-title" style="font-weight: bold;"> Total Doctor List</h6>
+        </div>
+        <table class="table table-hover" id="dev-table" style="color: #343A40; margin-left: 0.8cm; width: 100rem;;">
+            <thead>
+                <tr>
+
+                    <th>Name</th>
+                    <th>Profile Picture</th>
+                    <th>Mobile</th>
+                    <th>Address</th>
+                    <th>Department</th>
+
+                </tr>
+            </thead>
+            {% for d in doctors %}
+            <tr>
+
+                <td> {{d.get_name}}</td>
+                <td> <img src="{% static d.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                <td>{{d.mobile}}</td>
+                <td>{{d.address}}</td>
+                <td>{{d.department}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
-    <table class="table table-hover" id="dev-table">
-        <thead>
-          <tr>
-  
-            <th>Name</th>
-            <th>Profile Picture</th>
-            <th>Mobile</th>
-            <th>Address</th>
-            <th>Department</th>
-           
-          </tr>
-        </thead>
-        {% for d in doctors %}
-        <tr>
-  
-          <td> {{d.get_name}}</td>
-          <td> <img src="{% static d.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-          <td>{{d.mobile}}</td>
-          <td>{{d.address}}</td>
-          <td>{{d.department}}</td>
-        </tr>
-        {% endfor %}
-      </table>
-  </div>
-  {%else%}
-  <br><br><br>
-  <h4 style="text-align: center;color: red;">No Doctor Found !!!</h4>
-  {% endif %}
+    {%else%}
+    <br><br><br>
+    <h4 style="text-align: center;color:rgba(137, 200, 242, 1);"> No Doctor Found. Please try again.</h4>
+    {% endif %}
 
 
 </div>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
 
 {% endblock content %}

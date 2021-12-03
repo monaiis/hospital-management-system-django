@@ -1,56 +1,63 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <style media="screen">
-    .jumbotron {
-      margin-top: 0px;
-      margin-bottom: 0px;
-    }
-
-    .jumbotron h2 {
-      text-align: center;
-    }
-
-    .alert {
-      margin: 50px;
-    }
-
-    .img {
-      display: block;   
-      text-align: center;  
-    }
-
-  </style>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style media="screen">
+        .jumbotron {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        
+        .jumbotron h2 {
+            font-size: 45px;
+            text-align: center;
+        }
+        
+        .jumbotron h3 {
+            font-size: 25px;
+            text-align: center;
+        }
+        
+        .alert {
+            margin: 50px;
+        }
+        
+        .img1 {
+            float: left;
+            padding: 150px;
+        }
+        
+        .img2 {
+            float: right;
+            padding: 150px;
+        }
+    </style>
 </head>
 
-<body >
-  {% include "hospital/navbar.html" %}
-  <br><br>
-  <center>
-    <h1 class='alert alert-success' style="margin-bottom:0px; background-color: #fff; font-weight: medium; color: black;  border: none;">About Us </h1>
-  </center>
-  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px; background-color: white; height: 490px;">
+<body>
+    {% include "hospital/navbar.html" %}
+    <br><br>
+    <center>
+        <h1 class='alert alert-success' style="margin-bottom:0px; background-color: #fff; font-weight: medium; color: black;  border: none;">About Us </h1>
+    </center>
+    <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px; background-color: white; height: 490px;">
 
-    <!----------------------เพิ่ม about---------------------------------->
-    <h2 class="display-4">Our Hospital</h2>
-    <br><br> 
-    <p class="lead">Welcome to Our Hospital . We are a private hospital established and started offering medical services on September, 2021. Our Hospital is located on Pracha Uthit Road near King Mongkut's University of Technology Thonburi. With the area of more than 20 acres and with 3 patient buildings, our capacity is over 485 beds. Our Hospital is now a member of the Stock Exchange of Thailand (SET) and is certified with JCI accreditation from the Joint Commission International (JCI) - America , an international healthcare accreditation and certification organization. We are among the Top 5 largest private hospital groups in Thailand.</p>
-  
-  </div>
-  
-  <div  class='img'>
-  <img src="static/images/AboutUs1.png"/> 
-  <br><br>
-  <img src="static/images/AboutUs2.png"/>
-  </div>
+        <!----------------------เพิ่ม about---------------------------------->
+        <h2 class="display-4">Welcome to Our Hospital. </h2>
+        <h3 class="lead"> <br><br> We are a private hospital established and started offering medical services on September, 2021. <br><br> Our Hospital is located on Pracha Uthit Road near King Mongkut's University of Technology Thonburi. <br><br> With the area of more
+            than 20 acres and with 3 patient buildings, our capacity is over 485 beds. <br><br> Our Hospital is now a member of the Stock Exchange of Thailand (SET) <br><br> and is certified with JCI accreditation from the Joint Commission International
+            (JCI) <br><br> - America , an international healthcare accreditation and certification organization. <br><br> We are among the Top 5 largest private hospital groups in Thailand.
+        </h3>
+    </div>
+    <div class='img1'>
+        <img src="static/images/AboutUs1.png" />
+    </div>
+    <div class='img2'>
+        <img src="static/images/AboutUs2.png" />
+    </div>
 
 </body>
 
-{% include "hospital/footer.html" %}
 </html>

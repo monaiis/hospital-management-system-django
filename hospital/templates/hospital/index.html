@@ -1,76 +1,54 @@
-{% extends 'hospital/homebase.html' %}
-{% load static %}
-
-{% block content %}
-
+{% extends 'hospital/homebase.html' %} {% load static %} {% block content %}
 
 <head>
-  <style media="screen">
-    .jumbotron {
-      margin-top: 0px;
-      margin-bottom: 0px;
-      background-image: url('{% static "images/Hosbg.jpg" %}'); 
-      background-size: cover;
-      background-repeat: repeat-x;
-    }
-
-    .jumbotron h5,
-    h3 {
-      text-align: center;
-    }
-
-
-    .alert {
-      margin: 0px;
-    }
-
-
-
-    .glow {
-      font-size: 50px;
-      color: white;
-      text-align: center;
-      -webkit-animation: glow 1s ease-in-out infinite alternate;
-      -moz-animation: glow 1s ease-in-out infinite alternate;
-      animation: glow 1s ease-in-out infinite alternate;
-    }
-
-    @-webkit-keyframes glow {
-      from {
-        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
-      }
-
-      to {
-        text-shadow: 0 0 20px #eeeeee, 0 0 30px #f94dff, 0 0 40px #f94dff, 0 0 50px #f94dff, 0 0 60px #f94dff, 0 0 70px #f94dff, 0 0 80px #f94dff;
-      }
-    }
-    
-  </style>
+    <style media="screen">
+        .jumbotron {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-image: url('{% static "images/Hosbg.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .jumbotron h5,
+        h5 {
+            text-align: center;
+        }
+        
+        .alert {
+            margin: 0px;
+        }
+        
+        .glow {
+            font-size: 40px;
+            color: #080000;
+            text-align: center;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+        
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+            }
+            to {
+                text-shadow: 0 0 20px #eeeeee, 0 0 30px #4de7ff, 0 0 40px #4de7ff, 0 0 50px #4de7ff, 0 0 60px #4de7ff, 0 0 70px #4de7ff, 0 0 80px #4de7ff;
+            }
+        }
+    </style>
 </head>
 <br>
 <br>
-
 <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
-  <br>
-  <h4 class="display-3 glow">You’ll Love the Way We Care for You</h4>
-  <br><br>
-  <h5 class="display-3 glow">Caring for seniors, <br>
-    convalescent patients, <br>
-    bedridden patients, <br>
-    and chronic patients (NCD)</h5>
-  <br><br>
-  <h6 class="display-3 glow">We has a specialty in taking care of patients <br>
-    by experienced medical teams and nurses <br>
-    with high-quality medical standards</h6>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <p>
-  
-
+    <br>
+    <h4 class="display-3 glow">You’ll Love the Way We Care for You</h4>
+    <br><br>
+    <h5 class="display-3 glow">Caring for seniors, <br> convalescent patients, <br> bedridden patients, <br> and chronic patients (NCD)</h5>
+    <br><br>
+    <h6 class="display-3 glow">We has a specialty in taking care of patients <br> by experienced medical teams and nurses <br> with high-quality medical standards</h6>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>
 </div>
-
-
-
-
-
-
-{% endblock content %}
+<br><br><br><br>
+<br><br><br> {% endblock content %}

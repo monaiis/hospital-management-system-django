@@ -1,59 +1,48 @@
-{% extends 'hospital/admin_base.html' %}
-{% block content %}
+{% extends 'hospital/admin_base.html' %} {% block content %}
 
 <head>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <style media="screen">
-    a:link {
-      text-decoration: none;
-    }
-
-    h6 {
-      text-align: center;
-    }
-
-    .row {
-      margin: 100px;
-    }
-  </style>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+        
+        h6 {
+            text-align: center;
+        }
+        
+        .row {
+            margin: 100px;
+        }
+    </style>
 </head>
-<!--
-written By : sumit kumar
-facebook : fb.com/sumit.luv
--->
+
 <div class="container">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h6 class="panel-title">Discharge Patient</h6>
+    <div class="panel panel-primary" style="margin-left:2%;  border-color: rgba(137, 200, 242, 1);width: 106rem;">
+        <div class="panel-heading" style="text-align:center; background:rgba(181, 217, 236, 1); 
+    border-color:rgba(181, 217, 236, 1) ; width: 98.5rem; height: 3.5rem; margin-left: 0.95cm; border-radius: 5px;">
+            <h6 class="panel-title" style="font-weight: bold;">Discharge Patient</h6>
+        </div>
+        <table class="table table-hover" id="dev-table" style="font-size: small;color: #343A40; margin-left: 0.95cm; width: 98.5rem;">
+            <thead>
+                <tr style="color: #343A40;">
+                    <th>Name</th>
+                    <th>Symptoms</th>
+                    <th>Mobile</th>
+                    <th>Discharge</th>
+                </tr>
+            </thead>
+            {% for p in patients %}
+            <tr style="color: #343A40;">
+                <td style="color: #343A40;"> {{p.get_name}}</td>
+                <td style="color: #343A40;">{{p.symptoms}}</td>
+                <td style="color: #343A40;">{{p.mobile}}</td>
+                <td><a class="btn btn-primary btn-xs" href="{% url 'discharge-patient' p.id  %}" style="margin-left: 20px;"><span class="glyphicon glyphicon-log-out"></span></a></td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
-    <table class="table table-hover" id="dev-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Symptoms</th>
-          <th>Mobile</th>
-          <th>Discharge</th>
-        </tr>
-      </thead>
-      {% for p in patients %}
-      <tr>
-        <td> {{p.get_name}}</td>
-        <td>{{p.symptoms}}</td>
-        <td>{{p.mobile}}</td>
-        <td><a class="btn btn-primary btn-xs" href="{% url 'discharge-patient' p.id  %}"><span class="glyphicon glyphicon-log-out"></span></a></td>
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
-
-
 </div>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
-
 {% endblock content %}

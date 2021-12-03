@@ -1,58 +1,49 @@
-{% extends 'hospital/admin_base.html' %}
-{% block content %}
+{% extends 'hospital/admin_base.html' %} {% block content %}
 
 <head>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-  <style media="screen">
-    a:link {
-      text-decoration: none;
-    }
-
-    h6 {
-      text-align: center;
-    }
-
-    .row {
-      margin: 100px;
-    }
-  </style>
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+        
+        h6 {
+            text-align: center;
+        }
+        
+        .row {
+            margin: 100px;
+        }
+    </style>
 </head>
-<!--
-written By : sumit kumar
-facebook : fb.com/sumit.luv
--->
 <div class="container">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h6 class="panel-title">Appointments</h6>
+    <div class="panel panel-primary" style=" border-color: rgba(137, 200, 242, 1);">
+        <div class="panel-heading" style="background: rgba(137, 200, 242, 1); border-color:rgba(181, 217, 236, 1) ; 
+    width: 103.5rem; height: 3.5rem; margin-left: 0.9cm; border-radius: 5px;">
+            <h6 class="panel-title" style="font-weight: bold; ;color: #fff;">Appointments</h6>
+        </div>
+        <table class="table table-hover" id="dev-table" style="color: #343A40; margin-left: 0.9cm; width: 103rem;">
+            <thead>
+                <tr style="color: #343A40;">
+                    <th>Doctor Name</th>
+                    <th>Patient Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            {% for a in appointments %}
+            <tr style="color: #343A40;">
+                <td style="color: #343A40;"> {{a.doctorName}}</td>
+                <td style="color: #343A40;">{{a.patientName}}</td>
+                <td style="color: #343A40;">{{a.description}}</td>
+                <td style="color: #343A40;">{{a.appointmentDate}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
-    <table class="table table-hover" id="dev-table">
-      <thead>
-        <tr>
-          <th>Doctor Name</th>
-          <th>Patient Name</th>
-          <th>Description</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      {% for a in appointments %}
-      <tr>
-        <td> {{a.doctorName}}</td>
-        <td>{{a.patientName}}</td>
-        <td>{{a.description}}</td>
-        <td>{{a.appointmentDate}}</td>
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
 </div>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
 
 {% endblock content %}

@@ -1,43 +1,35 @@
-{% extends 'hospital/doctor_base.html' %}
-{% load static %}
-{% block content %}
-{%include 'hospital/doctor_dashboard_cards.html'%}
+{% extends 'hospital/doctor_base.html' %} {% load static %} {% block content %} {%include 'hospital/doctor_dashboard_cards.html'%}
 <br><br><br><br>
 <div class="container">
-  <div class="row">
-    <div class="panel panel-primary" style="margin-left:15%;">
-      <div class="panel-heading" style="text-align:center;">
-        <h6 class="panel-title">Recent Appointments For You</h6>
-      </div>
-      <table class="table table-hover" id="dev-table">
-        <thead>
-          <tr>
-            <th>Patient Name</th>
-            <th>Picture</th>
-            <th>Description</th>
-            <th>Mobile</th>
-            <th>Address</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        {% for a,p in appointments %}
-        <tr>
-          <td>{{a.patientName}}</td>
-          <td> <img src="{% static p.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-          <td>{{a.description}}</td>
-          <td>{{p.mobile}}</td>
-          <td>{{p.address}}</td>
-          <td>{{a.appointmentDate}}</td>
-        </tr>
-        {% endfor %}
-      </table>
+    <div class="row">
+        <div class="panel panel-primary" style=" border-color: rgba(137, 200, 242, 1);margin-left: 0.9cm;width:106.5rem">
+            <div class="panel-heading" style="background:rgba(181, 217, 236, 1); border-color:rgba(181, 217, 236, 1) ; text-align:center; 
+      width: 100rem; height: 3.5rem; margin-left: 0.8cm; border-radius: 5px;">
+                <h6 class="panel-title" style="font-weight: bold;">Recent Appointments For You</h6>
+            </div>
+            <table class="table table-hover" id="dev-table" style="color: #343A40; margin-left: 0.8cm; width: 100rem;">
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Picture</th>
+                        <th>Description</th>
+                        <th>Mobile</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                {% for a,p in appointments %}
+                <tr style="color: #343A40;">
+                    <td style="color: #343A40;">{{a.patientName}}</td>
+                    <td> <img src="{% static p.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                    <td style="color: #343A40;">{{a.description}}</td>
+                    <td style="color: #343A40;">{{p.mobile}}</td>
+                    <td style="color: #343A40;">{{p.address}}</td>
+                    <td style="color: #343A40;">{{a.appointmentDate}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
-  </div>
 </div>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
-
 {% endblock content %}
