@@ -39,7 +39,7 @@
             {% for d in doctors %}
             <tr style="color: #343A40;">
                 <td style="color: #343A40; margin-left: 0.78cm;"> {{d.get_name}}</td>
-                <td> <img src="{% static d.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                <td> <img src="{{ d.profile_pic.url }}" alt="Profile Pic" height="40px" width="40px" /></td>
                 <td style="color: #343A40; margin-left: 0.78cm;">{{d.mobile}}</td>
                 <td style="color: #343A40; margin-left: 0.78cm;">{{d.address}}</td>
                 <td style="color: #343A40; margin-left: 0.78cm;">{{d.department}}</td>

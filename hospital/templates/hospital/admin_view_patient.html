@@ -41,7 +41,7 @@
             {% for p in patients %}
             <tr>
                 <td style="color: #343A40;"> {{p.get_name}}</td>
-                <td> <img src="{% static p.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                <td> <img src="{{ p.profile_pic.url }}" alt="Profile Pic" height="40px" width="40px" /></td>
                 <td style="color: #343A40;">{{p.symptoms}}</td>
                 <td style="color: #343A40;">{{p.mobile}}</td>
                 <td style="color: #343A40;">{{p.address}}</td>
